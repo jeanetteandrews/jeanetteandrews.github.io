@@ -1,10 +1,12 @@
 import './App.css';
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Home from './pages'
+import React from 'react';
+
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router exact path={`/`}>
       <Home />
     </Router>
   );
