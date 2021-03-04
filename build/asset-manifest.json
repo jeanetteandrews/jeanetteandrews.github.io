@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "https://jeanetteandre.ws/static/css/main.bb8e2e4c.chunk.css",
-    "main.js": "https://jeanetteandre.ws/static/js/main.f94bbbb4.chunk.js",
-    "main.js.map": "https://jeanetteandre.ws/static/js/main.f94bbbb4.chunk.js.map",
-    "runtime-main.js": "https://jeanetteandre.ws/static/js/runtime-main.56a20fba.js",
-    "runtime-main.js.map": "https://jeanetteandre.ws/static/js/runtime-main.56a20fba.js.map",
-    "static/js/2.2e1ba2ac.chunk.js": "https://jeanetteandre.ws/static/js/2.2e1ba2ac.chunk.js",
-    "static/js/2.2e1ba2ac.chunk.js.map": "https://jeanetteandre.ws/static/js/2.2e1ba2ac.chunk.js.map",
-    "index.html": "https://jeanetteandre.ws/index.html",
-    "static/css/main.bb8e2e4c.chunk.css.map": "https://jeanetteandre.ws/static/css/main.bb8e2e4c.chunk.css.map",
-    "static/js/2.2e1ba2ac.chunk.js.LICENSE.txt": "https://jeanetteandre.ws/static/js/2.2e1ba2ac.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.bb8e2e4c.chunk.css",
+    "main.js": "/static/js/main.c155aaf7.chunk.js",
+    "main.js.map": "/static/js/main.c155aaf7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.406dd86f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.406dd86f.js.map",
+    "static/js/2.cbe4ee29.chunk.js": "/static/js/2.cbe4ee29.chunk.js",
+    "static/js/2.cbe4ee29.chunk.js.map": "/static/js/2.cbe4ee29.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.bb8e2e4c.chunk.css.map": "/static/css/main.bb8e2e4c.chunk.css.map",
+    "static/js/2.cbe4ee29.chunk.js.LICENSE.txt": "/static/js/2.cbe4ee29.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.56a20fba.js",
-    "static/js/2.2e1ba2ac.chunk.js",
+    "static/js/runtime-main.406dd86f.js",
+    "static/js/2.cbe4ee29.chunk.js",
     "static/css/main.bb8e2e4c.chunk.css",
-    "static/js/main.f94bbbb4.chunk.js"
+    "static/js/main.c155aaf7.chunk.js"
   ]
 }
