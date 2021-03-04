@@ -6,7 +6,7 @@ import React from 'react';
 
 function App() {
   return (
-    <Router exact path={`/`}>
+    <Router exact path='/'>
       <Home />
     </Router>
   );
