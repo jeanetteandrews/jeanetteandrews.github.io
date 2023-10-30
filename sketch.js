@@ -11,7 +11,7 @@ let illo = new Zdog.Illustration({
   dragRotate: true,
   resize: 'fullscreen',
   zoom: 6,
-  translate: { y: -11 },
+  translate: { y: -2 },
   rotate: { z: -TAU/50 },
   onDragStart: function() {
     isSpinning = false;
