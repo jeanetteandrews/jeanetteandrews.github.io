@@ -1,37 +1,133 @@
-let myFont;
+const yellow = '#EA0';
+const orange = '#E62';
+const purple = '#636';
+const pink = '#C25';
+const TAU = Zdog.TAU;
 
-setInterval(myTimer, 1000);
+let isSpinning = true;
 
-function myTimer() {
-    const d = new Date();
-    document.getElementById("time").innerHTML = d.toLocaleTimeString(navigator.language, {hour: 'numeric', minute:'2-digit'}).replace("AM", "am").replace("PM","pm");
-}
+let illo = new Zdog.Illustration({
+  element: '.zdog-svg',
+  dragRotate: true,
+  resize: 'fullscreen',
+  zoom: 6,
+  translate: { y: -11 },
+  rotate: { z: -TAU/50 },
+  onDragStart: function() {
+    isSpinning = false;
+  },
+});
 
-function setup() {
-    createCanvas(1284, 2778, WEBGL);
-    noStroke();
+// body
+new Zdog.Hemisphere({
+  addTo: illo,
+  diameter: 40,
+  stroke: 50,
+  rotate: { x: TAU/4 },
+  translate: { y: 40 },
+  color: yellow,
+});
+
+//left wing
+let wing = new Zdog.Shape({
+  addTo: illo,
+  path: [
+    { x: 0, y: 0 },
+    { arc: [
+      { x: 0, y: -20 , z: -10 },
+      { x: 0, y:  0 , z: -20 },
+    ]}
+  ],
+  rotate: { z: TAU/8 },
+  translate: { x: -45, y: 35 },
+  fill: true,
+  color: yellow,
+  stroke: 16,
+  scale: 1.2,
+})
+
+//right wing
+wing.copy({
+  translate: { x: 45, y: 35 },
+  rotate: { z: -TAU/8 },
+});
+
+// head
+var head = new Zdog.Shape({
+  addTo: illo,
+  translate: { y: -13 , z: 10 },
+  color: yellow,
+  stroke: 60,
+});
+
+// beak
+new Zdog.Shape({
+  addTo: head,
+  path: [
+    { x: 0, y: 0 },
+    { x: 8, y: 10, z: 10 },
+    { x: -8, y: 10, z: 10 },
+    { x: 0, y: 0 },
+    { x: 10, y: 10 },
+    { x: 8, y: 10, z: 10 },
+    { x: 0, y: 0 },
+    { x: -10, y: 10 },
+    { x: -8, y: 10, z: 10 },
+    { x: 8, y: 10, z: 10 },
+    { x: 10, y: 10 },
+    { x: -10, y: 10 }
+  ],
+  translate: { z: 25 },
+  color: orange,
+  stroke: 10,
+  fill: true,
+});
+
+// left eye
+let eye = new Zdog.Ellipse({
+  addTo: head,
+  diameter: 5,
+  quarters: 2,
+  translate: { x: -14, y: -3, z: 20 },
+  rotate: { z: -TAU/4 },
+  color: purple,
+  stroke: 2,
+  backface: false,
+});
+
+// right eye
+eye.copy({
+  translate: { x: 14, y: -3, z: 20 },
+});
+
+// left eyebrow
+let eyebrow = new Zdog.Shape({
+  addTo: head,
+  path: [
+    { x: 0, y: 0 },
+    { x: 5, y: 1.7},
+  ],
+  translate: { x: -16.5, y: -9, z: 20 },
+  color: pink,
+  stroke: 2,
+  backface: false,
+});
+
+// right eyebrow
+eyebrow.copy({
+  path: [
+    { x: 5, y: 0 },
+    { x: 0, y: 1.7},
+  ],
+  translate: { x: 11.5, y: -9, z: 20 },
+});
+
+function animate() {
+  if ( isSpinning ) {
+    illo.rotate.y += 0.03;
   }
-  
-function draw() {
-
-  let locX = mouseX - 650;
-  let locY = mouseY - 1425;
-      
-  ambientLight(60, 60, 60);
-  pointLight(255, 255, 255, locX, locY, 100);
-
-
-  translate(locX, locY);
-  push();
-  ambientLight(100);
-  directionalLight(255, 255, 255, -1, 1, -1);
-  ambientMaterial('#2548d2');
-  fill('#ff0000');
-  specularMaterial(255);
-  shininess(150);
-  rotateX(mouseY * 0.01);
-  rotateY(mouseX * 0.01);
-  torus(120, 80, 40, 30);
-  pop();
+  illo.updateRenderGraph();
+  requestAnimationFrame(animate);
 }
-  
+
+animate();

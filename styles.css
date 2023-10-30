@@ -1,28 +1,28 @@
 @font-face {
-    font-family: terminalGrotesque;
-    src: url(terminal-grotesque.grotesque-regular.ttf);
+    font-family: fredokaone;
+    src: url(fredokaone.ttf);
 }
 
-p {
+body {
+    margin: 0;
+    background: #5222ee;
+  }
+
+.zdog-svg {
+    cursor: move;
     position: absolute;
     z-index: 10;
-    font-family: terminalGrotesque;
-}
+  }
 
-#text1 {
-    top: 70%;
-    left: 20%;
-    font-size: 80px;
-}
-
-#time {
-    top: 70%;
-    left: 30%;
-    font-size: 80px;
-}
-
-#text2 {
-    top: 76%;
-    left: 20%;
-    font-size: 41px;
+p {
+    margin: 0;
+    text-align: center;
+    position: relative;
+    font-family: fredokaone;
+    z-index: -10;
+    font-size: 200px;
+    color: white;
+    height: 100%;
+    top: 200px;
+    transform: rotate(-20deg);
 }
