@@ -1,27 +1,53 @@
 let randomBtn = document.getElementById("randomize");
 const instrumentList = [kick, snare, hihat, hihat2, rim, shaker]
 
-randomBtn.addEventListener("click", () => {
-  for (let i=0; i < instrumentList.length; i++) {
-    let randomSpeed = Math.floor(Math.random() * 17) //17)
-    let randomPitch = Math.floor(Math.random() * 2)
-    playInstrument(randomSpeed, randomPitch, instrumentList[i])
-  }
-});
+const kickLoad = new Promise(resolve => {
+  kick.addEventListener("canplaythrough", resolve, { once: true })
+})
+const snareLoad = new Promise(resolve => {
+  snare.addEventListener("canplaythrough", resolve, { once: true })
+})
+const hihatLoad = new Promise(resolve => {
+  hihat.addEventListener("canplaythrough", resolve, { once: true })
+})
+const hihat2Load = new Promise(resolve => {
+  hihat2.addEventListener("canplaythrough", resolve, { once: true })
+})
+const rimLoad = new Promise(resolve => {
+  rim.addEventListener("canplaythrough", resolve, { once: true })
+})
+const shakerLoad = new Promise(resolve => {
+  shaker.addEventListener("canplaythrough", resolve, { once: true })
+})
 
-randomBtn.addEventListener("mouseover", () => {
-  anime({
-    targets: '.star',
-    scale: 1.25
-  })
-});
+Promise.all([kickLoad, snareLoad, hihatLoad, hihat2Load, rimLoad, shakerLoad]).then(() => {
+  playMusic()
+})
 
-randomBtn.addEventListener("mouseleave", () => {
-  anime({
-    targets: '.star',
-    scale: 1
-  })
-});
+function playMusic() {
+  randomBtn.textContent = "randomize"
+  randomBtn.addEventListener("click", () => {
+    for (let i=0; i < instrumentList.length; i++) {
+      let randomSpeed = Math.floor(Math.random() * 17) //17)
+      let randomPitch = Math.floor(Math.random() * 2)
+      playInstrument(randomSpeed, randomPitch, instrumentList[i])
+    }
+  });
+  
+  randomBtn.addEventListener("mouseover", () => {
+    anime({
+      targets: '.star',
+      scale: 1.25
+    })
+  });
+  
+  randomBtn.addEventListener("mouseleave", () => {
+    anime({
+      targets: '.star',
+      scale: 1
+    })
+  });
+}
 
 function playInstrument(speed, pitch, instrument) {
   instrument.currentTime = 0;
