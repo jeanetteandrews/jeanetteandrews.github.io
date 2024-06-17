@@ -1,0 +1,24 @@
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0px;
+  color: white;
+  font-size: 0.9rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 2px;
+} 
+
+.grid-home {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  justify-content: center;
+  align-content: center;
+}
+
+a {
+  margin: 20px;
+}

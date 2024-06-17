@@ -1,0 +1,77 @@
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    color: white;
+    font-size: 0.9rem;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 2px;
+  } 
+  
+  .grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #kick-square {
+    background-color: #2C469C;
+  }
+  
+  #snare-square {
+    background-color: #C552AB;
+  }
+  
+  #hihat-square {
+    background-color: #F2564E;
+  }
+  
+  #hihat2-square {
+    background-color: #2F775B;
+  }
+  
+  #rim-square {
+    background-color: #F1E66A;
+  }
+  
+  #shaker-square {
+    background-color: #9A8CC8;
+  }
+  
+  .circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: black;
+  }
+  
+  .star-container {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    position: relative;
+    text-align: center;
+  }
+  
+  .star {
+    padding: 30px 68px;
+    text-align: center;
+  }
+  
+  #randomize {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -35%);
+  }

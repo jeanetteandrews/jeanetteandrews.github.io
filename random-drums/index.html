@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../src/assets/star.svg" />
+    <link rel="stylesheet" href="src/random-drums.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>random drums</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+    <script type="module" src="src/random-drums.js"></script>
+    <audio id="kick" src="./src/assets/kick.wav" loop=></audio>
+    <audio id="snare" src="./src/assets/snare.wav" loop></audio>
+    <audio id="hihat" src="./src/assets/hihat.wav" loop></audio>
+    <audio id="hihat2" src="./src/assets/hihat2.wav" loop></audio>
+    <audio id="rim" src="./src/assets/rim.wav" loop></audio>
+    <audio id="shaker" src="./src/assets/shaker.wav" loop></audio>
+    <div class="grid">
+      <div class="square" id="kick-square"><div class="circle" id="kick-circle"></div></div>
+      <div class="square" id="snare-square"><div class="circle" id="snare-circle"></div></div>
+      <div class="square" id="hihat-square"><div class="circle" id="hihat-circle"></div></div>
+      <div class="square" id="hihat2-square"><div class="circle" id="hihat2-circle"></div></div>
+      <div class="square" id="rim-square"><div class="circle" id="rim-circle"></div></div>
+      <div class="square" id="shaker-square"><div class="circle" id="shaker-circle"></div></div>
+      <div class="star-container">
+        <img class="star" src="../src/assets/star.svg" draggable=false>
+        <p id="randomize">randomize</p>
+      </div>
+    </div>
+  </body>
+</html>
