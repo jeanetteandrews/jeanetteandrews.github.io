@@ -20,12 +20,13 @@ const shakerLoad = new Promise(resolve => {
   shaker.addEventListener("canplaythrough", resolve, { once: true })
 })
 
+randomBtn.textContent = "loading..."
 Promise.all([kickLoad, snareLoad, hihatLoad, hihat2Load, rimLoad, shakerLoad]).then(() => {
+  randomBtn.textContent = "randomize"
   playMusic()
 })
 
 function playMusic() {
-  randomBtn.textContent = "randomize"
   randomBtn.addEventListener("click", () => {
     for (let i=0; i < instrumentList.length; i++) {
       let randomSpeed = Math.floor(Math.random() * 17) //17)
