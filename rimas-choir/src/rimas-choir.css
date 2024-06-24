@@ -1,5 +1,11 @@
 html, body {
   height: 100%;
+  font-size: 0.8rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 1.2px;
+  color: black;
 }
 
 body {
@@ -13,9 +19,9 @@ body {
 button {
   height:60px;
   width:60px;
-  font-size: 16px;
   cursor: pointer;
   border: 3px solid;
+  border-color: black;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
   position: relative;
 }
@@ -24,13 +30,6 @@ button:active {
   box-shadow: 0px 0px 0px 0px;
   top: 5px;
   left: 5px;
-}
-
-p {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 500;
-  font-size: 0.8rem;
-  letter-spacing: 1.2px;
 }
 
 #p1 {

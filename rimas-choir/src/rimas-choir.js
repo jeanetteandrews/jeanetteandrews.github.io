@@ -49,7 +49,7 @@ function setup() {
     btn8 = createButton('*ੈ✩‧₊˚');
     btn9 = createButton('˚. ✦˳✶ ⋆');
     btn10 = createButton('●∘◦❀');
-    btn11 = createButton('☄. *. ⋆');
+    btn11 = createButton('. *. ⋆');
     btn12 = createButton('☆⋆｡𖦹°‧★');
     btn13 = createButton('⋆˚✿˖°');
     btn14 = createButton('⋆｡°✩');
