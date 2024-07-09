@@ -20,7 +20,6 @@ async function rnboSetup() {
 
     let device = await createDevice({ context, patcher });
     
-    //get the params
     startStop = device.parametersById.get("startStop");
     gain11 = device.parametersById.get("gain11");
     gain12 = device.parametersById.get("gain12");
@@ -41,8 +40,6 @@ async function rnboSetup() {
     outputNode.connect(context.destination);
 
     device.node.connect(context.destination); 
-
-    // context.suspend();
 };
 
 rnboSetup();
@@ -72,26 +69,23 @@ function onMouseUpdate(e) {
     else {
         xnew1 = (-5 / w) * x + 3;
     }
-
     if (x < w/2) {
         xnew2 = 0.5
     }
     else {
         xnew2 = (5 / w) * x - 2;
     }
-
     if (y > h/2) {
-        ynew1 = 0.1
+        ynew1 = 0.5
     }
     else {
-        ynew1 = (-5.8 / h) * y + 3;
+        ynew1 = (-5 / h) * y + 3;
     }
-
     if (y < h/2) {
-        ynew2 = 0.1
+        ynew2 = 0.5
     }
     else {
-        ynew2 = (5.8 / h) * y - 2.8;
+        ynew2 = (5 / h) * y - 2;
     }
 
     gain11.value = xnew1;
@@ -108,13 +102,4 @@ function onMouseUpdate(e) {
 
     gain41.value = ynew2;  
     gain42.value = ynew2;
-}
-
-function getMouseX() {
-
-  return x;
-}
-
-function getMouseY() {
-  return y;
 }
