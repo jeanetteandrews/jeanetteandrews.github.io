@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../src/assets/star.svg" />
+    <link rel="stylesheet" href="src/weather-song.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.1.2/Tone.min.js"></script>
+    <script type="text/javascript" src=https://cdnjs.cloudflare.com/ajax/libs/pts/0.12.9/pts.min.js></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather song</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="pt"></div>
+      <input type="text" id="location" value="type location here" onfocus="clearInput()" autocomplete="off"/>
+      <button onclick="sonify()">sonify</button>
+      <p id="response">what was the past week's weather like?</p>
+    </div>
+    <script src="src/weather-song.js" defer></script>
+  </body>
+</html>
