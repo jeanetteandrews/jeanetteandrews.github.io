@@ -20,12 +20,12 @@ html, body {
 }
   
 #pt {
-    width: 500px;
-    height: 500px;
+    margin-top: 50px;
+    width: 450px;
+    height: 450px;
 }
   
 #location {
-    /* margin-top: 10px; */
     font-family: 'NeueBit', Arial, sans-serif;
     font-size: 1.1rem;
 }

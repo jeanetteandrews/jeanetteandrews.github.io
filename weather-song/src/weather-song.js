@@ -128,9 +128,9 @@ function clearInput(){
 space.add({
   animate: (time, ftime) => {
     if (sound) {
-      getFlower(1.7, 'black', .5);
-      getFlower(2.2, 'black', .5);
-      getFlower(3.2, 'black', .5);
+      getFlower(1.5, 'black', .5);
+      getFlower(2, 'black', .5);
+      getFlower(3, 'black', .5);
     }
   }
 });
