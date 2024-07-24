@@ -1,3 +1,5 @@
+//////////////////////// pts.js set-up ////////////////////////
+
 Pts.namespace( window );
 
 var space = new CanvasSpace("#pt");
@@ -6,11 +8,11 @@ var form = space.getForm();
 
 var bins = 512;
 
-// load audio file
+///////////////////////////////////////////////////////////////
+
 let synth = new Tone.Synth().toDestination();
 let sound = Sound.from( synth, synth.context ).analyze(bins);
 
-// define variable for our location
 let locationField;
 let audioCtx;
 let freq = 0;
@@ -24,7 +26,6 @@ let WAContext = window.AudioContext || window.webkitAudioContext;
 let context = new WAContext();
 
 function sonify(){
-  console.log(locationField.value);
   const options = {
 	method: 'GET',
 	headers: {
@@ -39,15 +40,9 @@ today.setDate(today.getDate() - 1);
 const sevenDaysAgo = new Date(today);
 sevenDaysAgo.setDate(today.getDate() - 6);
 
-console.log(today)
-console.log(sevenDaysAgo)
-
-// Format the dates as YYYY-MM-DD
+// format the dates as YYYY-MM-DD
 const endDate = today.toISOString().split('T')[0];
 const startDate = sevenDaysAgo.toISOString().split('T')[0];
-
-console.log(endDate)
-console.log(startDate)
 
 const url = `https://visual-crossing-weather.p.rapidapi.com/history?aggregateHours=24&location=${locationField.value}&startDateTime=${startDate}T12:00:00&endDateTime=${endDate}T12:00:00&contentType=json&unitGroup=us&shortColumnNames=0`;
 
@@ -70,8 +65,6 @@ fetch(url, options)
     });
 
     condition = getMostFrequentCondition(conditionsArray)
-    
-    console.log(condition)
 
     triggerNotes(midiNotes);
     console.log(midiNotes);
@@ -86,19 +79,15 @@ function triggerNotes(midiNotes) {
       const now = Tone.now();
       const duration = noteData.duration;
       const timing = now + noteData.timing;
-
-      // Trigger the note using synth.triggerAttackRelease()
       synth.triggerAttackRelease(noteData.note, duration, timing);
   });
 }
 
 function getMostFrequentCondition(conditionsArray) {
-  // Step 1: Create a frequency counter object
   const frequencyCounter = {};
 
-  // Step 2: Count occurrences of each string
   conditionsArray.forEach(item => {
-    const condition = item[0]; // Since each item is an array with one element
+    const condition = item[0];
     if (frequencyCounter[condition]) {
         frequencyCounter[condition]++;
     } else {
@@ -106,7 +95,6 @@ function getMostFrequentCondition(conditionsArray) {
     }
   });
 
-  // Step 3: Find the string with the maximum count
   let maxCount = 0;
   let mostFrequentCondition = '';
 
@@ -123,6 +111,7 @@ return mostFrequentCondition.toLowerCase();
 function clearInput(){
   locationField.value = '';
 }
+
 //////////////////////// pts.js ////////////////////////
 
 space.add({
@@ -142,7 +131,7 @@ function getFlower(size, color, rotation){
     return [ln.p1, ln.interpolate(t.y)];
   });
   
-  for (let i = 0, len = tdata.length; i < len; i++) {
+  for (let i = 0; i < tdata.length; i++) {
     form.stroke(color, 0.1).line(tdata[i]);
   }
 }

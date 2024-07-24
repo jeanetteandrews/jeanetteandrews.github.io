@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'NeueBit'; 
+    src: url('../../src/assets/PPNeueBit-Bold.otf') format('opentype');
+}
+
+body {
+    margin:0;
+}
+
+#instructions {
+    font-family: 'NeueBit', Arial, sans-serif;
+    font-size: 2rem;
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 200px;
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 20px 47px 20px;
+    box-sizing: border-box;
+    width: 350px;
+    color:white;
+    text-align:center;
+    border-radius:35px;
+    cursor: pointer;
+    border-style:solid;
+    border-color:lime;
+    border-width:1px;
+    box-shadow: 3px 3px 12px lime;
+    background-color: rgba(0, 0, 0, 0.7);
+    letter-spacing: 1.2px;
+}
