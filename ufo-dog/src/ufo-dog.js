@@ -110,7 +110,7 @@ const onKeyDown = function ( event ) {
 
 		case 'ArrowLeft':
 		case 'KeyA':
-			moveLeft = true;
+			moveRight = true;
 			break;
 
 		case 'ArrowDown':
@@ -120,7 +120,7 @@ const onKeyDown = function ( event ) {
 
 		case 'ArrowRight':
 		case 'KeyD':
-			moveRight = true;
+			moveLeft= true;
 			break;
 
 		case 'KeyZ':
@@ -168,7 +168,7 @@ const onKeyUp = function ( event ) {
 
 		case 'ArrowLeft':
 		case 'KeyA':
-			moveLeft = false;
+			moveRight = false;
 			break;
 
 		case 'ArrowDown':
@@ -178,7 +178,7 @@ const onKeyUp = function ( event ) {
 
 		case 'ArrowRight':
 		case 'KeyD':
-			moveRight = false;
+			moveLeft = false;
 			break;
 
 	}
@@ -240,8 +240,7 @@ loader.load('src/assets/gltfmodel/ufo/ufo.gltf', function (gltf) {
 
 startup();
 
-const amplitude = 1; // Maximum height of the jump
-const frequency = .005; // Speed of the jump
+const frequency = .005; // dance speed
 
 function animate() {
 	requestAnimationFrame( animate );
@@ -308,9 +307,39 @@ function animate() {
 
 animate();
 
+/**
+ * Sizes
+ */
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
+
+window.addEventListener('resize', () =>
+{
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+
+/**
+ * Renderer
+ */
+const renderer2 = new THREE.WebGLRenderer({
+    canvas: canvas
+})
+renderer2.setSize(sizes.width, sizes.height)
+renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
 function starty(){
     listener.context.resume();
-    // Start oscillator
-    //oscillator.start(0);
 }
 
