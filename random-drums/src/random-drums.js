@@ -29,7 +29,7 @@ Promise.all([kickLoad, snareLoad, hihatLoad, hihat2Load, rimLoad, shakerLoad]).t
 function playMusic() {
   randomBtn.addEventListener("click", () => {
     for (let i=0; i < instrumentList.length; i++) {
-      let randomSpeed = Math.floor(Math.random() * 17) //17)
+      let randomSpeed = Math.floor(Math.random() * 17)
       let randomPitch = Math.floor(Math.random() * 2)
       playInstrument(randomSpeed, randomPitch, instrumentList[i])
     }
