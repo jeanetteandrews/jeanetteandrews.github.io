@@ -19,7 +19,7 @@ html, body {
   user-select: none;
 }
 
-#loading-text {
+#loading-text, #begin-text {
   position: absolute;
   z-index: 2;
   display: flex;
@@ -53,7 +53,7 @@ button {
   text-shadow: 0 0 5px rgb(164, 196, 85);
 }
 
-button:hover {
+button:hover, #begin-text:hover {
   color: rgb(164, 196, 85);
   cursor: pointer;
 }

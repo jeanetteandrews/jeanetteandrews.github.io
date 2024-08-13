@@ -71,7 +71,7 @@ async function setup(seq) {
 
     // Connect the devices in series
     sampleDevice.node.connect(context.destination);  
-    context.suspend();
+    context.resume();
 
     sound = Sound.from(sampleDevice.node, context).analyze(bins);  
 
@@ -93,7 +93,7 @@ function getCircle(circle, coords, color, size, stroke) {
     }
 
 async function initializeAll() {
-
+    document.getElementById('begin-text').style.display = 'none';
     document.getElementById('loading-text').style.display = 'block';
     document.getElementById('button-container').style.display = 'none';
 
@@ -107,14 +107,6 @@ async function initializeAll() {
 
     document.getElementById('loading-text').style.display = 'none';
     document.getElementById('button-container').style.display = 'block';
-
-    return patches;
-}
-
-// Initialize everything
-initializeAll().then(patches => {
-
-    console.log("All patches initialized", patches);
 
     space.add({
 
@@ -132,7 +124,9 @@ initializeAll().then(patches => {
             getCircle(patches[9], [-200, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
             }
       });
-});
+
+    return patches;
+}
 
 let randomSequenceList;
 function getSequence() {
@@ -193,8 +187,6 @@ let text;
 
 function playPatches(sequences, samples, swings, speeds) {
     pause()
-
-    context.resume();
 
     console.log(sequences)
     for (let i = 0; i < 6; i++) {

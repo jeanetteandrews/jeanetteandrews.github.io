@@ -11,8 +11,9 @@
     <script src="src/script.js" defer></script>
   </head>
   <body>
-    <div id="loading-text" style="display: none;">Loading...</div>
-    <div id="button-container">
+    <div id="begin-text" onclick="initializeAll()">click to begin</div>
+    <div id="loading-text" style="display: none;">loading...</div>
+    <div id="button-container" style="display: none;">
       <button onclick ="getRandomPatches()">randomize</button>
       <button onclick="downloadTextFile()">keep it forever</button>
       <button id="uploadButton">play it again</button>
