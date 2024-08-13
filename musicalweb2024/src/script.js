@@ -32,10 +32,10 @@ space.add({
   }
 });
 
-const WAContext = window.AudioContext || window.webkitAudioContext;
-context = new WAContext();
-
 async function setup(seq) {
+
+    const WAContext = window.AudioContext || window.webkitAudioContext;
+    context = new WAContext();
     
     // Create gain node and connect it to audio output
     const outputNode = context.createGain();
@@ -71,7 +71,7 @@ async function setup(seq) {
 
     // Connect the devices in series
     sampleDevice.node.connect(context.destination);  
-    context.resume();
+    context.suspend();
 
     sound = Sound.from(sampleDevice.node, context).analyze(bins);  
 
@@ -130,19 +130,7 @@ initializeAll().then(patches => {
             getCircle(patches[7], [0, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
             getCircle(patches[8], [200, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
             getCircle(patches[9], [-200, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            },
-
-        action: (type, px, py) => {
-            if (type === "move") {
-                // Check if the mouse is over any circle
-                for (let i = 0; i < patches.length; i++) {
-                    if (isInsideCircle(px, py, patches[i].x, patches[i].y, 10)) {
-                        // If inside, draw text
-                        form.fillOnly("#000").font(14).text([px + 10, py + 10], `Patch ${i + 1}`);
-                    }
-                }
             }
-        }
       });
 });
 
@@ -205,6 +193,8 @@ let text;
 
 function playPatches(sequences, samples, swings, speeds) {
     pause()
+
+    context.resume();
 
     console.log(sequences)
     for (let i = 0; i < 6; i++) {
