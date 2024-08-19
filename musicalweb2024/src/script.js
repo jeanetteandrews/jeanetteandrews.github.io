@@ -79,11 +79,12 @@ async function setup(seq) {
     return { start, speed, swing, sample, gain, sound }
 }
 
-function getCircle(circle, coords, color, size, stroke) {
+function getCircle(circle, coords, color, lengthPercent, stroke) {
 
     let tdata = circle.sound.timeDomainTo([Const.two_pi, 0.5]).map((t, i) => {
       let angle = (i / bins) * Const.two_pi +  Math.PI * 0.5;
-      let ln = Line.fromAngle(space.center.add(coords), angle, space.size.y / size);
+      let lineLength = (space.size.y * lengthPercent) / 100;
+      let ln = Line.fromAngle(space.center.add(coords), angle, lineLength);
       return [ln.p1, ln.interpolate(t.y)];
     });
 
@@ -111,17 +112,17 @@ async function initializeAll() {
     space.add({
 
         animate: (time, ftime) => {
-            getCircle(patches[0], [50, -50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[1], [-50, -50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[2], [150, -50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[3], [-150, -50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[4], [250, -50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[5], [-250, -50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[6], [100, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[10], [-100, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[7], [0, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[8], [200, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
-            getCircle(patches[9], [-200, 50], 'rgba(164, 196, 85, 0.07)',  6, 10);
+            getCircle(patches[0], [50, -50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[1], [-50, -50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[2], [150, -50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[3], [-150, -50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[4], [250, -50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[5], [-250, -50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[6], [100, 50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[10], [-100, 50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[7], [0, 50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[8], [200, 50], 'rgba(164, 196, 85, 0.07)',  20, 10);
+            getCircle(patches[9], [-200, 50], 'rgba(164, 196, 85, 0.07)',  20, 10);
             }
       });
 
