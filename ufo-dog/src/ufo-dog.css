@@ -9,16 +9,16 @@ body {
 
 #instructions {
     font-family: 'NeueBit', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 2.4vw;
     position: absolute; 
     left: 0; 
     right: 0; 
-    top: 200px;
+    top: 25%;
     margin-left: auto; 
     margin-right: auto; 
     padding: 20px 47px 20px;
     box-sizing: border-box;
-    width: 350px;
+    width: 32vw;
     color:white;
     text-align:center;
     border-radius:35px;

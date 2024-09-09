@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'NeueBit'; 
-    src: url('../../src/assets/PPNeueBit-Bold.otf') format('opentype');
-}
-
 html, body {
     height: 100%;
     width: 100%;
@@ -10,6 +5,11 @@ html, body {
     padding: 0;
     justify-content: center;
     align-items: center;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.3vw;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 1.2px;
 }
 
 #container {
@@ -20,26 +20,33 @@ html, body {
 }
   
 #pt {
-    margin-top: 50px;
-    width: 450px;
-    height: 450px;
+    margin-top: -5vh;
+    width: 45vw;
+    height: 45vw;
 }
   
 #location {
-    font-family: 'NeueBit', Arial, sans-serif;
-    font-size: 1.1rem;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.3vw;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 1.2px;
+}
+
+#location:focus {
+    outline-width: 0;
 }
 
 button {
     margin-top: 10px;
-    font-family: 'NeueBit', Arial, sans-serif;
-    font-size: 1.1rem;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.3vw;
     color: black;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 1.2px;
 }
 
 #response {
     margin-top: 20px;
-    text-align: center;
-    font-family: 'NeueBit', Arial, sans-serif;
-    font-size: 1.1rem;
 }

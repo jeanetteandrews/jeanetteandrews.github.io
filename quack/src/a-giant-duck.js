@@ -10,8 +10,8 @@ let illo = new Zdog.Illustration({
   element: '.zdog-svg',
   dragRotate: true,
   resize: 'fullscreen',
-  zoom: 6,
-  translate: { y: -2 },
+  zoom: 3,
+  translate: { y: -10 },
   rotate: { z: -TAU/50 },
   onDragStart: function() {
     isSpinning = false;

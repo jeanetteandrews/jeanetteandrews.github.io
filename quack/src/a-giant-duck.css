@@ -1,28 +1,8 @@
-@font-face {
-    font-family: fredokaone;
-    src: url(assets/fredokaone.ttf);
+body {
+  margin: 0;
 }
 
-body {
-    margin: 0;
-    background: #5222ee;
-  }
-
 .zdog-svg {
-    cursor: move;
-    position: absolute;
-    z-index: 10;
-  }
-
-p {
-    margin: 0;
-    text-align: center;
-    position: relative;
-    font-family: fredokaone;
-    z-index: -10;
-    font-size: 200px;
-    color: white;
-    height: 100%;
-    top: 200px;
-    transform: rotate(-20deg);
+  cursor: move;
+  position: absolute;
 }

@@ -2,21 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src/assets/star.svg" />
+    <link rel="icon" type="image/svg+xml" href=""/>
     <link rel="stylesheet" href="src/index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>a cool website</title>
+    <title>microsite central</title>
   </head>
   <body>
-    <div class="grid-home">
-      <a id="drums2" href="musicalweb2024/">random drums 2</a>
-      <a id="ufo-dog" href="ufo-dog/">UFO dog</a>
-      <a id="weather" href="weather-song/">weather song</a>
-      <a id="choir" href="rimas-choir">rima's choir</a>
-      <a id="drums" href="random-drums">random drums</a>
-      <a id="duck" href="quack">a giant duck</a>
-      <a id="ig" href="https://www.instagram.com/jersas" target=”_blank”>other projects</a>
-    </div>
+    <header>
+      <h3>jeanette andrews</h3>
+    </header>
+    <main>
+      <div id="projects">
+        <a class="project-link" data-url="musicalweb2024/"><span>random drums</span></a>
+        <a class="project-link" data-url="https://musical-web-summer24.vercel.app/"><span>SFPC musical web showcase</span></a>
+        <a class="project-link" data-url="ufo-dog/"><span>UFO dog</span></a>
+        <a class="project-link" data-url="random-drums"><span>mini random drums</span></a>
+        <a class="project-link" data-url="rimas-choir"><span>rima's choir</span></a>
+        <a class="project-link" data-url="weather-song/"><span>weather song</span></a>
+        <a class="project-link" data-url="quack"><span>quack</span></a>
+        <br>
+        <a href="https://github.com/jeanetteandrews" class="social-link"><span>github</span></a>
+        <a href="https://instagram.com/jersas" class="social-link"><span>instagram</span></a>
+      </div>
+
+      <div id="iframe" class="hidden">
+        <iframe id="iframe-content" src="" frameborder="0"></iframe>
+        <a id="external-link" href="">
+          <div class="image-container">
+            <img src="src/assets/box.png" draggable="false" oncontextmenu="return false;" class="box-image" />
+            <img src="src/assets/arrow.png" draggable="false" oncontextmenu="return false;" class="arrow-image" />
+          </div>
+        </a>
+        <div id="project-info" class="hidden">
+          <p>presented at the <a href="https://youtu.be/dBErFlHfc8w?si=2tlsK0L85oog4LGN&t=1094" target="_blank">internet archive</a> with <a href="https://tiat.place/" target="_blank">tiat place</a></p>
+        </div>
+      </div>
+    </main>
+    <script src="src/index.js"></script>
   </body>
 </html>
