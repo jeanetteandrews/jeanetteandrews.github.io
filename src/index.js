@@ -13,12 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     "weather song": "src/assets/favicons/weather-song.png",
     "UFO dog": "src/assets/favicons/ufo-dog.png",
     "mini random drums": "src/assets/favicons/random-drums.svg",
-    "rima's choir": "src/assets/favicons/rimas-choir.png"
+    "rima's choir": "src/assets/favicons/rimas-choir.png",
+    "space DJ": "src/assets/favicons/space-dj.png"
   };
 
   function updateFavicon(projectName) {
     const faviconPath = faviconMap[projectName]; 
     favicon.href = faviconPath;
+    favicon.type = "img/gif";
   }
 
   function handleLinkClick(link, url) {
