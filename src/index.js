@@ -59,5 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     randomLink.click();
   }
 
-  openRandomProject();
+  // openRandomProject();
+  links[0].click();
 });
