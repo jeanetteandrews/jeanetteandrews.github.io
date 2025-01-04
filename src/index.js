@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "UFO Dog": "src/assets/favicons/ufo-dog.png",
     "Drum Randomizer 1": "src/assets/favicons/random-drums.svg",
     "Rima's Choir": "src/assets/favicons/rimas-choir.png",
-    "Cavity": "src/assets/favicons/cavity.png"
+    "Cavity": "src/assets/favicons/cavity.png",
+    "Stop Motion": "src/assets/favicons/coding.png"
   };
 
   const projectDescriptions = {
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const keyboard = document.getElementById('keyboard');
   const h3 = document.getElementById('animated-text');
-  const text = " is a creative coder and musical artist based in the Bay Area, CA";
+  const text = "is a creative coder and musical artist based in the Bay Area, CA.";
   let index = 0;
   let isTyping = true;
 
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function typeText() {
     if (index < text.length) {
-      h3.textContent += text.charAt(index);
+      h3.innerHTML += text.charAt(index);
       index++;
       setTimeout(typeText, 20); // Adjust typing speed here
     }
