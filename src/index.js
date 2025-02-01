@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectDescriptions = {
     "Drum Randomizer 2": "Using: Pts.js, Max RNBO. View <a href='https://jeanetteandre.ws/musicalweb2024/'>full site ↗</a>. Presented at the <a href='https://youtu.be/dBErFlHfc8w?si=2tlsK0L85oog4LGN&t=1094' target='_blank'>Internet Archive ↗</a> with <a href='https://tiat.place/' target='_blank'>tiat place ↗</a>.",
     "Cavity": "Using: p5.js. View <a href='https://cavity-map.vercel.app' target='_blank'>full site ↗</a>.",
-    "UFO Dog": "Using: Three.js. View <a href='https://jeanetteandre.ws/ufo-dog/'>full site ↗</a>.",
+    "UFO Dog": "Using: Three.js, Max RNBO. View <a href='https://jeanetteandre.ws/ufo-dog/'>full site ↗</a>.",
     "SFPC Musical Web": "Using: Woscope.js. View <a href='https://projects.sfpc.study/musical-web-summer24/' target='_blank'>full site ↗</a>. Showcase for the <a href='https://sfpc.study/' target='_blank'>School for Poetic Computation ↗</a> The Musical Web.",
   };
 
