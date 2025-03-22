@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Drum Randomizer 1": "src/assets/favicons/random-drums.svg",
     "Rima's Choir": "src/assets/favicons/rimas-choir.png",
     "Cavity": "src/assets/favicons/cavity.png",
-    "Stop Motion": "src/assets/favicons/coding.png"
+    "Strudel": "https://static-00.iconduck.com/assets.00/spiral-emoji-1826x2048-ybctqzju.png"
   };
 
   const projectDescriptions = {
