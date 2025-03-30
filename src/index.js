@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Cavity": "Using: p5.js. View <a href='https://thehtml.review/04/cavity/' target='_blank'>full site ↗</a>. Featured in <a href='https://thehtml.review/04/' target='_blank'>The HTML Review ↗</a>.",
     "UFO Dog": "Using: Three.js, Max RNBO. View <a href='https://jeanetteandre.ws/ufo-dog/'>full site ↗</a>.",
     "SFPC Musical Web": "Using: Woscope.js. View <a href='https://projects.sfpc.study/musical-web-summer24/' target='_blank'>full site ↗</a>. Showcase for the <a href='https://sfpc.study/' target='_blank'>School for Poetic Computation ↗</a> The Musical Web.",
+    "Shaders": "Using: Three.js, GLSL"
   };
 
   function updateFavicon(projectName) {
