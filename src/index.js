@@ -21,13 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     "Cavity": "Using: p5.js. View <a href='https://thehtml.review/04/cavity/' target='_blank'>full site ↗</a>. Featured in <a href='https://thehtml.review/04/' target='_blank'>The HTML Review ↗</a>.",
     "UFO Dog": "Using: Three.js, Max RNBO. View <a href='https://jeanetteandre.ws/ufo-dog/'>full site ↗</a>.",
     "SFPC Musical Web": "Using: Woscope.js. View <a href='https://projects.sfpc.study/musical-web-summer24/' target='_blank'>full site ↗</a>. Showcase for the <a href='https://sfpc.study/' target='_blank'>School for Poetic Computation ↗</a> The Musical Web.",
-    "Shaders": "Using: Three.js, GLSL"
+    "Sound Paint": "Using: p5.js, View <a href='https://jeanetteandre.ws/sound-paint/'>full site ↗</a>.",
   };
 
   function updateFavicon(projectName) {
     const faviconPath = faviconMap[projectName]; 
     favicon.href = faviconPath;
-    favicon.type = "img/gif";
   }
 
   function handleLinkClick(link, url) {
@@ -50,22 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
   links.forEach(link => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
-      const url = link.getAttribute('data-url');
+      const url = link.getAttribute('data-url'); 
       handleLinkClick(link, url);
     });
   });
 
-  function openRandomProject() {
-    const randomIndex = Math.floor(Math.random() * links.length);
-    const randomLink = links[randomIndex];
-    randomLink.click();
-  }
-
-  // openRandomProject();
   links[0].click();
-});
 
-document.addEventListener('DOMContentLoaded', () => {
   const keyboard = document.getElementById('keyboard');
   const h3 = document.getElementById('animated-text');
   const text = "is a creative coder and musical artist based in the Bay Area, CA.";
