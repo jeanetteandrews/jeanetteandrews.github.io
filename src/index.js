@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const faviconMap = {
     "SFPC Musical Web": "src/assets/favicons/musical-web-summer24.png",
     "Drum Randomizer 2": "src/assets/favicons/musicalweb2024.png",
-    "Quack": "src/assets/favicons/duck.png",
     "Weather Song": "src/assets/favicons/weather-song.png",
     "UFO Dog": "src/assets/favicons/ufo-dog.png",
     "Drum Randomizer 1": "src/assets/favicons/random-drums.svg",
