@@ -135,7 +135,7 @@ html, body {
     left: 20px;
     z-index: 20;
     max-width: 500px;
-    max-height: 80vh; 
+    max-height: 75vh; 
     overflow-y: auto; 
     background: rgba(0,0,0,0.9);
     color: white;
