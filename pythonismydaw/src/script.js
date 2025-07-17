@@ -154,13 +154,15 @@ let patchData = {
     }
     draw();
   }
-  
-  window.addEventListener("DOMContentLoaded", async () => {
+
+  async function initializeAll() {
+    document.getElementById('begin-text').style.display = 'none';
     document.getElementById('loading-overlay').style.display = 'flex';
+
     await setup('50', 'techno50.export.json', 'visualizerCanvas');
     await setup('150', 'techno150.export.json', 'visualizerCanvas150');
     document.getElementById('loading-overlay').style.display = 'none';
-  });
+  };
   
   window.togglePlayback = togglePlayback;
 

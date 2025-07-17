@@ -26,7 +26,7 @@
     background-color: #fff0f5;
   }
 
-  #controls {
+  #controls, #controls150 {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
@@ -113,8 +113,10 @@
     color: gray;
   }
 
+  
+
   /* Position loading screen absolutely */
-#loading-overlay {
+#loading-overlay, #begin-text {
   position: fixed;
   top: 0;
   left: 0;
@@ -128,6 +130,10 @@
   font-size: 2rem;
   font-weight: bold;
   color: #333;
+}
+
+#begin-text {
+  cursor: pointer;
 }
 
 <style>
@@ -145,3 +151,4 @@
     background: black;
     display: block;
   }
+  
