@@ -1,0 +1,26 @@
+[
+  {
+    "id": "k1",
+    "file": "kicktechno50.wav"
+  },
+  {
+    "id": "s1",
+    "file": "snaretechno50.wav"
+  },
+  {
+    "id": "h1",
+    "file": "hhtechno50.wav"
+  },
+  {
+    "id": "k2",
+    "file": "kicktechno150.wav"
+  },
+  {
+    "id": "s2",
+    "file": "snaretechno150.wav"
+  },
+  {
+    "id": "h2",
+    "file": "hhtechno150.wav"
+  }
+]

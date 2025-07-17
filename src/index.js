@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "UFO Dog": "Using: Three.js, Max RNBO. View <a href='https://jeanetteandre.ws/ufo-dog/'>full site ↗</a>.",
     "SFPC Musical Web": "Using: Woscope.js. View <a href='https://projects.sfpc.study/musical-web-summer24/' target='_blank'>full site ↗</a>. Showcase for the <a href='https://sfpc.study/' target='_blank'>School for Poetic Computation ↗</a> The Musical Web.",
     "Sound Paint": "Using: p5.js, View <a href='https://jeanetteandre.ws/sound-paint/'>full site ↗</a>.",
+    "Python is my DAW": "Using: Python, Max RNBO. View <a href='https://jeanetteandre.ws/pythonismydaw/'>full site ↗</a>."
   };
 
   function updateFavicon(projectName) {
