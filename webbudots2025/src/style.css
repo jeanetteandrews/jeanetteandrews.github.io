@@ -1,0 +1,152 @@
+@font-face {
+  font-family: Light;
+  src: url(../../src/assets/Favorit-Light.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Light, sans-serif;
+    /* letter-spacing: .05rem; */
+    color: black;
+}
+
+body {
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.date {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    background: #000;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #333;
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.arrow {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: background 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.description p {
+    margin-bottom: 15px;
+}
+
+.association {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.association a {
+    color: #666;
+    text-decoration: none;
+}
+
+.association a:hover {
+    font-style: italic;
+}
+
+.iframe-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 15px;
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+}
+
+.external-link {
+    display: inline-block;
+    color: blue;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.external-link:hover {
+    font-style: italic;
+}

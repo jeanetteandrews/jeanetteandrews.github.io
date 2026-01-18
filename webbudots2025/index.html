@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="src/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../src/assets/favicons/webbudots.png"/>
+    <title>WebBudots</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>WebBudots</h1>
+    <div class="date">Installation, June 2025</div>
+    
+    <div class="slideshow-container">
+        <div class="slide active">
+            <video autoplay loop muted playsinline>
+                <source src="src/budots1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="slide">
+            <video loop muted playsinline>
+                <source src="src/budots2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="slide">
+            <video loop muted playsinline>
+                <source src="src/budots3.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="arrows">
+            <button class="arrow" onclick="changeSlide(-1)">❮</button>
+            <button class="arrow" onclick="changeSlide(1)">❯</button>
+        </div>
+    </div>
+    
+    <div class="nav-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+    
+    <div class="description">
+        <p><i>WebBudots</i> is a web-based tribute to Budots, a grassroots electronic dance genre that originated from Davao City, Philippines. DJ Love (also known as Sherwin Tuna) was one of its earliest pioneers, creating Budots music from his internet cafe in the mid 2000s.</p>
+        
+        <p>The website visualizes Budots' rise in popularity over time. In August 2024, Budots went viral on TikTok, gaining new global attention.</p>
+        
+        <p>Budots is rooted in the creativity of low-income Filipino communities, produced on pirated FL Studio software and blasted from street parties across the Philippines. Despite its cultural significance, Budots has often been dismissed due to classist attitudes and a broader bias towards Western artistic standards—ones which overlook accessible, grassroots expressions of joy, resilience, and innovation. Yet, Budots has already proven its mainstream appeal. Deeply infused with a DIY spirit, Budots challenges conventional definitions of art and is a testament to Filipino ingenuity.</p>
+    </div>
+    
+    <div class="association">
+        Association: <a href="https://grayarea.org/event/gray-area-creative-code-showcase-spring-2025/"  target="_blank">Gray Area Foundation for the Arts ↗</a>
+    </div>
+    
+    <div class="iframe-container">
+        <div class="iframe-wrapper">
+            <iframe src="https://jeanetteandre.ws/webbudots" title="WebBudots Interactive"></iframe>
+        </div>
+        <a href="https://jeanetteandre.ws/webbudots" target="_blank" class="external-link">External link ↗</a>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

@@ -381,6 +381,7 @@ a {
 #project-description a {
   margin-right: 0;
   color: blue;
+  text-decoration: none;
 }
 
 #project-description a:hover {

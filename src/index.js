@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const projectDescriptions = {
     "Drum Randomizer 2": "Using: Pts.js, Max RNBO. View <a href='https://jeanetteandre.ws/musicalweb2024/'>full site ↗</a>. Presented at the <a href='https://youtu.be/dBErFlHfc8w?si=2tlsK0L85oog4LGN&t=1094' target='_blank'>Internet Archive ↗</a> with <a href='https://tiat.place/' target='_blank'>tiat place ↗</a>.",
-    "WebBudots": "Using: Tone.js, Hydra. View <a href='https://jeanetteandre.ws/webbudots/'>full site ↗</a>. Showcased at <a href='https://grayarea.org/event/gray-area-creative-code-showcase-spring-2025/' target='_blank'>Gray Area ↗</a>.",
     "Cavity": "Using: p5.js. View <a href='https://thehtml.review/04/cavity/' target='_blank'>full site ↗</a>. Featured in <a href='https://thehtml.review/04/' target='_blank'>The HTML Review ↗</a>.",
     "UFO Dog": "Using: Three.js, Max RNBO. View <a href='https://jeanetteandre.ws/ufo-dog/'>full site ↗</a>.",
     "SFPC Musical Web": "Using: Woscope.js. View <a href='https://projects.sfpc.study/musical-web-summer24/' target='_blank'>full site ↗</a>. Showcase for the <a href='https://sfpc.study/' target='_blank'>School for Poetic Computation ↗</a> The Musical Web.",
