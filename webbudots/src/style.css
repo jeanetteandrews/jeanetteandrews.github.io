@@ -1,251 +1,252 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: "Inconsolata", monospace;
-    font-size: 24px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inconsolata", monospace;
+  font-size: 24px;
+}
+
 #my-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    background-color: black;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: black;
+}
 
 #date-display {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 100px;
-    color: white;
-    font-family: "Honk", sans-serif;
-    pointer-events: none;
-  }
+  position: fixed;     
+  bottom: 20px;
+  right: 20px;        
+  font-size: 30px;
+  color: white;
+  font-family: "Honk", sans-serif;
+  pointer-events: none;
+}
 
 #controls {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 12px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    z-index: 10;
-  }
-  
-  #controls button, 
-  #controls input[type="range"] {
-    cursor: pointer;
-    margin-bottom: 3px;
-    font-family: "Honk", sans-serif;
-    font-size: 50px;
-  }  
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
 
-  #controls button .button-text {
-    display: inline-block;
-    transition: transform 0.2s ease;
-  }
-  
-  #controls button:hover .button-text {
-    transform: scale(1.2);
-  }
+#controls button, 
+#controls input[type="range"] {
+  cursor: pointer;
+  margin-bottom: 3px;
+  font-family: "Honk", sans-serif;
+  font-size: 50px;
+}  
 
-  #about-button:hover .about-text {
-    transform: scale(1.2);
-    transition: transform 0.2s ease;
-  }
+#controls button .button-text {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
 
-  #controls input[type="range"] {
-    margin-bottom: 10px;
-  } 
+#controls button:hover .button-text {
+  transform: scale(1.2);
+}
 
-  input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 200px;
-    height: 20px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #2196f3 50%, #ccc 50%);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    outline: none;
-    transition: background 0.2s;
-  }
-  
-  /* Chrome & Safari Thumb */
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border: 2px solid #2196f3;
-    border-radius: 50%;
-    margin-top: 0px;
-  }
-  
-  /* Firefox Track */
-  input[type="range"]::-moz-range-track {
-    height: 20px;
-    background: #ccc;
-    border-radius: 10px;
-  }
-  
-  /* Firefox Progress Fill */
-  input[type="range"]::-moz-range-progress {
-    height: 20px;
-    background: #2196f3;
-    border-radius: 10px;
-  }
-  
-  /* Firefox Thumb */
-  input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: white;
-    border: 2px solid #2196f3;
-    border-radius: 50%;
-  }
-  
+#about-button:hover .about-text {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
 
-  #about-button {
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    padding: 6px 30px 6px 30px;
-    font-size: 50px;
-    font-family: "Honk", sans-serif;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    z-index: 10;
-  }
-  
-  #about-box {
-    font-family: "Inconsolata", monospace;
-    position: absolute;
-    top: 130px;
-    left: 20px;
-    z-index: 20;
-    max-width: 500px;
-    max-height: 75vh; 
-    overflow-y: auto; 
-    background: rgba(0,0,0,0.9);
-    color: white;
-    padding: 15px 20px;
-    border: 1px solid white;
-    font-size: 24px;
-    line-height: 1.5;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    pointer-events: auto;
-  }
-  
-  #about-box::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  #about-box::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-  }
-  
-  #about-box::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
-  }
-  
-  #about-box.hidden {
-    display: none;
-  }
-  
-  #close-about {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  
-  #start-screen {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 9999;
-    font-size: 2rem;
-    text-align: center;
-    cursor: pointer;
-  }
+#controls input[type="range"] {
+  margin-bottom: 10px;
+} 
 
-  .honk {
-    font-family: "Honk", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-      "MORF" 15,
-      "SHLN" 50;
-  }
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 10px; /* Reduced track height */
+  border-radius: 5px;
+  background: linear-gradient(to right, #2196f3 50%, #ccc 50%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+}
 
-  .kalnia-glaze {
-    font-family: "Kalnia Glaze", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-  }
-  
-  .grayscale {
-    filter: grayscale(100%);
-    opacity: 0.5;
-  }
+/* Chrome & Safari Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2px solid #2196f3;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0px; /* No margin needed now */
+}
 
-  #about-box span{
-    font-family: "Inconsolata", monospace;
-    color: magenta;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .dj-hover::after {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 1000px;
-    height: 400px;
-    transform: translate(-50%, -50%);
-    background-image: url('dj-love-debut-album.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 9999;
-  }
-  
-  .dj-hover:hover::after {
-    opacity: 1;
-  }
+/* Firefox Track */
+input[type="range"]::-moz-range-track {
+  height: 10px; /* Reduced track height */
+  background: #ccc;
+  border-radius: 5px;
+}
+
+/* Firefox Progress Fill */
+input[type="range"]::-moz-range-progress {
+  height: 10px; /* Reduced track height */
+  background: #2196f3;
+  border-radius: 5px;
+}
+
+/* Firefox Thumb */
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2px solid #2196f3;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+#about-button {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  padding: 6px 30px 6px 30px;
+  font-size: 50px;
+  font-family: "Honk", sans-serif;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+#about-box {
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  top: 130px;
+  left: 20px;
+  z-index: 20;
+  max-width: 500px;
+  max-height: 75vh; 
+  overflow-y: auto; 
+  background: rgba(0,0,0,0.9);
+  color: white;
+  padding: 15px 20px;
+  border: 1px solid white;
+  font-size: 24px;
+  line-height: 1.5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  pointer-events: auto;
+}
+
+#about-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+#about-box::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#about-box::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+#about-box.hidden {
+  display: none;
+}
+
+#close-about {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#start-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.honk {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+.kalnia-glaze {
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+#about-box span{
+  font-family: "Inconsolata", monospace;
+  color: magenta;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.dj-hover::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  background-image: url('dj-love-debut-album.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.dj-hover:hover::after {
+  opacity: 1;
+}
 
 .davao::after {
   content: "";
@@ -270,11 +271,11 @@ html, body {
 }
 
 a {
-    color: magenta;
+  color: magenta;
 }
 
 #learn-more {
-    color: magenta;
-    font-family: "Honk", sans-serif;
-    font-size: 50px;
+  color: magenta;
+  font-family: "Honk", sans-serif;
+  font-size: 50px;
 }

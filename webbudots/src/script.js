@@ -8,6 +8,14 @@ function startTone() {
 	Tone.start().then(() => { 
         console.log("audio is ready"); 
         buttonStart.style.display = "none";
+        
+        // Initialize audio for default slider values
+        sliderValues.forEach((value, index) => {
+          if (value > 0) {
+            setGroupWet(index, value);
+          }
+        });
+        
         startSequence();
         logMasterVolume();
     }).catch((error) => { 
@@ -296,8 +304,12 @@ effects.forEach(effect => {
 });
 
 seqLen = sequences.length
-// one Tone.Volume for each track
-const volumes = Array.from({ length: seqLen }, () => new Tone.Volume(0).toDestination());
+// one Tone.Volume for each track - start all muted
+const volumes = Array.from({ length: seqLen }, () => {
+  const vol = new Tone.Volume(0).toDestination();
+  vol.mute = true; // Start all muted
+  return vol;
+});
 
 const samples = [
   new Tone.Player("../webbudots/src/samples/bomb.wav").connect(volumes[0]).connect(effects[0]),
@@ -312,43 +324,42 @@ const samples = [
   new Tone.Sampler({"C1":"../webbudots/src/samples/bass.wav"}).connect(volumes[9]).connect(effects[9])
 ];
 
-const effectEnabled = Array(groupMap.length).fill(true); // tracks if effect is connected
+// Disconnect all samples from effects initially
+samples.forEach((sample, index) => {
+  sample.disconnect(effects[index]);
+});
+
+const effectEnabled = Array(groupMap.length).fill(false); // tracks if effect is connected - start all off
 
 function toggleTrack(groupIndex, buttonElement) {
   const indices = groupMap[groupIndex];
   effectEnabled[groupIndex] = !effectEnabled[groupIndex];
 
-  // Find the slider next to the button
   const sliderElement = buttonElement.nextElementSibling;
 
-  // Apply or remove the grayscale class
   if (!effectEnabled[groupIndex]) {
     buttonElement.classList.add("grayscale");
     sliderElement.classList.add("grayscale");
+    indices.forEach(index => {
+      volumes[index].mute = true;
+      samples[index].disconnect(effects[index]);
+    });
   } else {
     buttonElement.classList.remove("grayscale");
     sliderElement.classList.remove("grayscale");
-  }
-
-  // Mute/unmute and connect/disconnect effects
-  indices.forEach(index => {
-    const volume = volumes[index];
-    const sample = samples[index];
-    const effect = effects[index];
-
-    volume.mute = !volume.mute;
-
-    if (effectEnabled[groupIndex]) {
-      sample.connect(effect);
-    } else {
-      sample.disconnect(effect);
+    const sliderValue = sliderValues[groupIndex];
+    if (sliderValue > 0) {
+      indices.forEach(index => {
+        volumes[index].mute = false;
+        samples[index].connect(effects[index]);
+      });
     }
-  });
+  }
 
   updateModulatePixelate();
 }
 
-let sliderValues = Array(groupMap.length).fill(0); // Store each group's wet value (0–100)
+let sliderValues = [10, 40, 0, 0, 0]; // [kick, snare, tiwtiw, sweep, bass]
 let sliderSum = 0; // The total sum of slider values
 
 function setGroupWet(groupIndex, value) {
@@ -357,11 +368,36 @@ function setGroupWet(groupIndex, value) {
   sliderSum = sliderValues.reduce((a, b) => a + b, 0); // update global sum
 
   const normalizedWet = wetValue / 100;
-  groupMap[groupIndex].forEach(index => {
-    if ('wet' in effects[index]) {
-      effects[index].wet.value = normalizedWet;
-    }
-  });
+  const indices = groupMap[groupIndex];
+  
+  // Find the button and slider elements
+  const buttons = document.querySelectorAll('[onclick^="toggleTrack"]');
+  const buttonElement = buttons[groupIndex];
+  const sliderElement = buttonElement ? buttonElement.nextElementSibling : null;
+  
+  // If slider is at 0, treat it like the track is toggled off
+  if (wetValue === 0) {
+    effectEnabled[groupIndex] = false;
+    if (buttonElement) buttonElement.classList.add("grayscale");
+    if (sliderElement) sliderElement.classList.add("grayscale");
+    
+    indices.forEach(index => {
+      volumes[index].mute = true;
+      samples[index].disconnect(effects[index]);
+    });
+  } else {
+    effectEnabled[groupIndex] = true;
+    if (buttonElement) buttonElement.classList.remove("grayscale");
+    if (sliderElement) sliderElement.classList.remove("grayscale");
+    
+    indices.forEach(index => {
+      volumes[index].mute = false;
+      samples[index].connect(effects[index]);
+      if ('wet' in effects[index]) {
+        effects[index].wet.value = normalizedWet;
+      }
+    });
+  }
 
   if (groupIndex === 1) {//snare
     updateSnarePattern(wetValue);
@@ -375,6 +411,8 @@ function setGroupWet(groupIndex, value) {
   if (groupIndex === 4) { //bass
     updateBassPattern(wetValue);
   }
+  
+  updateModulatePixelate(); // Update visuals when slider changes
 }
 
 function updateSnarePattern(value) {
@@ -508,7 +546,24 @@ const philData = [0.01, 0.01, 1, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01,
 
 const usData = [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 4, 4, 5, 5, 4, 0.01, 4, 4, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 7, 0.01, 6, 10, 7, 9, 7, 4, 6, 7, 5, 4, 5, 4, 6, 8, 7, 0.01, 0.01, 4, 0.01, 0.01, 0.01, 6, 0.01, 6, 8, 7, 6, 0.01, 0.01, 8, 0.01, 0.01, 0.01, 0.01, 0.01, 6, 6, 9, 9, 0.01, 0.01, 7, 0.01, 0.01, 0.01, 0.01, 9, 9, 7, 0.01, 0.01, 0.01, 0.01, 7, 0.01, 9, 5, 4, 4, 14, 16, 16, 12, 13, 13, 14, 11, 8, 8, 9, 8, 8, 11, 10, 10, 9, 9, 21, 11, 13, 17, 16, 16, 14, 26, 18, 14, 13, 12, 12, 10, 10, 11, 10, 11, 12, 13, 14, 11, 10, 13, 12, 11, 10, 11, 12, 10, 12, 12, 13, 10, 12, 10, 7, 7, 7, 7, 8, 7, 7, 8, 9, 7, 24, 81, 100, 28, 9, 9, 8, 8, 9, 12, 11, 10, 11, 14, 14, 17, 41, 51, 45, 27, 24, 15, 15, 15, 16, 14, 13, 12 ];
 
-const date = ["01/2008","02/2008","03/2008","04/2008","05/2008","06/2008","07/2008","08/2008","09/2008","10/2008","11/2008","12/2008", "01/2009","02/2009","03/2009","04/2009","05/2009","06/2009","07/2009","08/2009","09/2009","10/2009","11/2009","12/2009","01/2010","02/2010","03/2010","04/2010","05/2010","06/2010","07/2010","08/2010","09/2010","10/2010","11/2010","12/2010","01/2011","02/2011","03/2011","04/2011","05/2011","06/2011","07/2011","08/2011","09/2011","10/2011","11/2011","12/2011","01/2012","02/2012","03/2012","04/2012","05/2012","06/2012","07/2012","08/2012","09/2012","10/2012","11/2012","12/2012","01/2013","02/2013","03/2013","04/2013","05/2013","06/2013","07/2013","08/2013","09/2013","10/2013","11/2013","12/2013","01/2014","02/2014","03/2014","04/2014","05/2014","06/2014","07/2014","08/2014","09/2014","10/2014","11/2014","12/2014","01/2015","02/2015","03/2015","04/2015","05/2015","06/2015","07/2015","08/2015","09/2015","10/2015","11/2015","12/2015","01/2016","02/2016","03/2016","04/2016","05/2016","06/2016","07/2016","08/2016","09/2016","10/2016","11/2016","12/2016","01/2017","02/2017","03/2017","04/2017","05/2017","06/2017","07/2017","08/2017","09/2017","10/2017","11/2017","12/2017","01/2018","02/2018","03/2018","04/2018","05/2018","06/2018","07/2018","08/2018","09/2018","10/2018","11/2018","12/2018","01/2019","02/2019","03/2019","04/2019","05/2019","06/2019","07/2019","08/2019","09/2019","10/2019","11/2019","12/2019","01/2020","02/2020","03/2020","04/2020","05/2020","06/2020","07/2020","08/2020","09/2020","10/2020","11/2020","12/2020","01/2021","02/2021","03/2021","04/2021","05/2021","06/2021","07/2021","08/2021","09/2021","10/2021","11/2021","12/2021","01/2022","02/2022","03/2022","04/2022","05/2022","06/2022","07/2022","08/2022","09/2022","10/2022","11/2022","12/2022","01/2023","02/2023","03/2023","04/2023","05/2023","06/2023","07/2023","08/2023","09/2023","10/2023","11/2023","12/2023","01/2024","02/2024","03/2024","04/2024","05/2024","06/2024","07/2024","08/2024","09/2024","10/2024","11/2024","12/2024","01/2025","02/2025","03/2025","04/2025","05/2025","06/2025"]
+const date = ["January 2008","February 2008","March 2008","April 2008","May 2008","June 2008","July 2008","August 2008","September 2008","October 2008","November 2008","December 2008",
+"January 2009","February 2009","March 2009","April 2009","May 2009","June 2009","July 2009","August 2009","September 2009","October 2009","November 2009","December 2009",
+"January 2010","February 2010","March 2010","April 2010","May 2010","June 2010","July 2010","August 2010","September 2010","October 2010","November 2010","December 2010",
+"January 2011","February 2011","March 2011","April 2011","May 2011","June 2011","July 2011","August 2011","September 2011","October 2011","November 2011","December 2011",
+"January 2012","February 2012","March 2012","April 2012","May 2012","June 2012","July 2012","August 2012","September 2012","October 2012","November 2012","December 2012",
+"January 2013","February 2013","March 2013","April 2013","May 2013","June 2013","July 2013","August 2013","September 2013","October 2013","November 2013","December 2013",
+"January 2014","February 2014","March 2014","April 2014","May 2014","June 2014","July 2014","August 2014","September 2014","October 2014","November 2014","December 2014",
+"January 2015","February 2015","March 2015","April 2015","May 2015","June 2015","July 2015","August 2015","September 2015","October 2015","November 2015","December 2015",
+"January 2016","February 2016","March 2016","April 2016","May 2016","June 2016","July 2016","August 2016","September 2016","October 2016","November 2016","December 2016",
+"January 2017","February 2017","March 2017","April 2017","May 2017","June 2017","July 2017","August 2017","September 2017","October 2017","November 2017","December 2017",
+"January 2018","February 2018","March 2018","April 2018","May 2018","June 2018","July 2018","August 2018","September 2018","October 2018","November 2018","December 2018",
+"January 2019","February 2019","March 2019","April 2019","May 2019","June 2019","July 2019","August 2019","September 2019","October 2019","November 2019","December 2019",
+"January 2020","February 2020","March 2020","April 2020","May 2020","June 2020","July 2020","August 2020","September 2020","October 2020","November 2020","December 2020",
+"January 2021","February 2021","March 2021","April 2021","May 2021","June 2021","July 2021","August 2021","September 2021","October 2021","November 2021","December 2021",
+"January 2022","February 2022","March 2022","April 2022","May 2022","June 2022","July 2022","August 2022","September 2022","October 2022","November 2022","December 2022",
+"January 2023","February 2023","March 2023","April 2023","May 2023","June 2023","July 2023","August 2023","September 2023","October 2023","November 2023","December 2023",
+"January 2024","February 2024","March 2024","April 2024","May 2024","June 2024","July 2024","August 2024","September 2024","October 2024","November 2024","December 2024",
+"January 2025","February 2025","March 2025","April 2025","May 2025","June 2025"]
 
 bpm = 140
 
@@ -612,5 +667,31 @@ document.querySelectorAll('input[type="range"]').forEach(slider => {
 
   slider.addEventListener('input', () => {
     updateBackground(slider);
+  });
+});
+
+// Initialize all buttons and sliders - set defaults for snare and bass
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[onclick^="toggleTrack"]');
+  buttons.forEach((button, index) => {
+    const slider = button.nextElementSibling;
+    const defaultValue = sliderValues[index];
+    
+    if (defaultValue === 0) {
+      button.classList.add("grayscale");
+      if (slider) slider.classList.add("grayscale");
+    } else {
+      // Set slider value and update visual state only (no audio yet)
+      if (slider) {
+        slider.value = defaultValue;
+        // Manually update slider background for default values
+        const min = parseFloat(slider.min) || 0;
+        const max = parseFloat(slider.max) || 100;
+        const val = parseFloat(slider.value) || 0;
+        const percentage = ((val - min) / (max - min)) * 100;
+        slider.style.background = `linear-gradient(to right, #2196f3 ${percentage}%, #ccc ${percentage}%)`;
+        // Don't call setGroupWet here - wait until audio starts
+      }
+    }
   });
 });
