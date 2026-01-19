@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="src/style.css" /> 
   </head>
   <body>
-    <div id="start-screen">
+    <!-- <div id="start-screen">
         <div>click to begin</div>
-    </div>
+    </div> -->
 
     <canvas id="my-canvas"  width="1500px" height="1000px"></canvas>
     <div id="date-display"></div>
@@ -50,24 +50,22 @@
         <a href="https://rollingstonephilippines.com/music/producer-obese-dogma777-post-budots-filipino-electronic-music/" target="_blank">Producer obese.dogma777 on ‘Post-Budots’ and Filipino Electronic Music</a><br>
     </div>
 
-    <div id="controls">
-        <button id="start-button" onclick="startTone()"><span class="button-text">Start Tone.js</span></button>
-      
-        <button onclick="toggleTrack(0, this)"><span class="button-text">bomb</span></button>
-        <input type="range" min="0" max="100" value="0" oninput="setGroupWet(0, this.value)" />
-      
-        <button onclick="toggleTrack(1, this)"><span class="button-text">pak</span></button>
-        <input type="range" min="0" max="100" value="0" oninput="setGroupWet(1, this.value)" />
-      
-        <button onclick="toggleTrack(2, this)"><span class="button-text">tiw tiw</span></button>
-        <input type="range" min="0" max="100" value="0" oninput="setGroupWet(2, this.value)" />
-      
-        <button onclick="toggleTrack(3, this)"><span class="button-text">sweep</span></button>
-        <input type="range" min="0" max="100" value="0" oninput="setGroupWet(3, this.value)" />
-      
-        <button onclick="toggleTrack(4, this)"><span class="button-text">bass</span></button>
-        <input type="range" min="0" max="100" value="0" oninput="setGroupWet(4, this.value)" />
-    </div>
+  <div id="controls">
+    <button class="track-button"><span class="button-text">bomb</span></button>
+    <input type="range" min="0" max="100" value="0" oninput="setGroupWet(0, this.value)" />
+
+    <button class="track-button"><span class="button-text">pak</span></button>
+    <input type="range" min="0" max="100" value="0" oninput="setGroupWet(1, this.value)" />
+
+    <button class="track-button"><span class="button-text">tiw tiw</span></button>
+    <input type="range" min="0" max="100" value="0" oninput="setGroupWet(2, this.value)" />
+
+    <button class="track-button"><span class="button-text">sweep</span></button>
+    <input type="range" min="0" max="100" value="0" oninput="setGroupWet(3, this.value)" />
+
+    <button class="track-button"><span class="button-text">bass</span></button>
+    <input type="range" min="0" max="100" value="0" oninput="setGroupWet(4, this.value)" />
+  </div>
 
     <script src="src/script.js" defer></script>
   </body>

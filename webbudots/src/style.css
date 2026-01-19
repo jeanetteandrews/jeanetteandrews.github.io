@@ -38,12 +38,19 @@ html, body {
   z-index: 10;
 }
 
-#controls button, 
-#controls input[type="range"] {
-  cursor: pointer;
+#controls button {
   margin-bottom: 3px;
   font-family: "Honk", sans-serif;
   font-size: 50px;
+  background-color: rgb(254, 254, 254);
+  border: none;
+}
+
+#controls input[type="range"] {
+  margin-bottom: 3px;
+  font-family: "Honk", sans-serif;
+  font-size: 50px;
+  cursor: pointer;
 }  
 
 #controls button .button-text {
@@ -51,13 +58,8 @@ html, body {
   transition: transform 0.2s ease;
 }
 
-#controls button:hover .button-text {
-  transform: scale(1.2);
-}
-
-#about-button:hover .about-text {
-  transform: scale(1.2);
-  transition: transform 0.2s ease;
+#about-button:hover {
+  background-color: magenta;
 }
 
 #controls input[type="range"] {
@@ -128,6 +130,9 @@ input[type="range"]::-moz-range-thumb {
   flex-direction: column;
   gap: 8px;
   z-index: 10;
+  border-radius: 0px;
+  border: none;
+  background-color: rgb(254, 254, 254);
 }
 
 #about-box {
@@ -177,22 +182,6 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
-#start-screen {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 9999;
-  font-size: 2rem;
-  text-align: center;
-  cursor: pointer;
-}
-
 .honk {
   font-family: "Honk", system-ui;
   font-optical-sizing: auto;
@@ -210,11 +199,6 @@ input[type="range"]::-moz-range-thumb {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
-}
-
-.grayscale {
-  filter: grayscale(100%);
-  opacity: 0.5;
 }
 
 #about-box span{

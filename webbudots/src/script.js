@@ -1,27 +1,17 @@
 let pixelStrength = 0.00001;
 let coloramaStrength = 0;
 
-const buttonStart = document.getElementById("start-button");
-
-function startTone() {
-    buttonStart.disabled = "true";
-	Tone.start().then(() => { 
-        console.log("audio is ready"); 
-        buttonStart.style.display = "none";
-        
-        // Initialize audio for default slider values
-        sliderValues.forEach((value, index) => {
-          if (value > 0) {
-            setGroupWet(index, value);
-          }
-        });
-        
-        startSequence();
-        logMasterVolume();
-    }).catch((error) => { 
-        console.log("audio not ready"); 
-        buttonStart.disabled = "false"; 
+// Auto-start audio when user first interacts with a slider
+let audioStarted = false;
+function ensureAudioStarted() {
+  if (!audioStarted) {
+    Tone.start().then(() => {
+      startSequence();
+      logMasterVolume();
+      audioStarted = true;
+      console.log("audio is ready");
     });
+  }
 }
 
 // 32 in each 8 count, 256 in total
@@ -359,10 +349,12 @@ function toggleTrack(groupIndex, buttonElement) {
   updateModulatePixelate();
 }
 
-let sliderValues = [10, 40, 0, 0, 0]; // [kick, snare, tiwtiw, sweep, bass]
-let sliderSum = 0; // The total sum of slider values
+let sliderValues = [0, 0, 0, 0, 0]; // All start at 0
+let sliderSum = 0; 
 
 function setGroupWet(groupIndex, value) {
+  ensureAudioStarted(); 
+
   const wetValue = parseFloat(value); // 0–100
   sliderValues[groupIndex] = wetValue;
   sliderSum = sliderValues.reduce((a, b) => a + b, 0); // update global sum
@@ -370,26 +362,15 @@ function setGroupWet(groupIndex, value) {
   const normalizedWet = wetValue / 100;
   const indices = groupMap[groupIndex];
   
-  // Find the button and slider elements
-  const buttons = document.querySelectorAll('[onclick^="toggleTrack"]');
-  const buttonElement = buttons[groupIndex];
-  const sliderElement = buttonElement ? buttonElement.nextElementSibling : null;
-  
-  // If slider is at 0, treat it like the track is toggled off
+  // If slider is at 0, track is off
   if (wetValue === 0) {
     effectEnabled[groupIndex] = false;
-    if (buttonElement) buttonElement.classList.add("grayscale");
-    if (sliderElement) sliderElement.classList.add("grayscale");
-    
     indices.forEach(index => {
       volumes[index].mute = true;
       samples[index].disconnect(effects[index]);
     });
   } else {
     effectEnabled[groupIndex] = true;
-    if (buttonElement) buttonElement.classList.remove("grayscale");
-    if (sliderElement) sliderElement.classList.remove("grayscale");
-    
     indices.forEach(index => {
       volumes[index].mute = false;
       samples[index].connect(effects[index]);
@@ -412,7 +393,7 @@ function setGroupWet(groupIndex, value) {
     updateBassPattern(wetValue);
   }
   
-  updateModulatePixelate(); // Update visuals when slider changes
+  updateModulatePixelate();
 }
 
 function updateSnarePattern(value) {
@@ -642,20 +623,6 @@ document.getElementById("close-about").onclick = () => {
 //     elem.msRequestFullscreen();
 //   }
 // }
-
-document.getElementById("start-screen").addEventListener("click", () => {
-  // Request fullscreen mode
-  // openFullscreen();
-
-  // Hide start screen
-  document.getElementById("start-screen").style.display = "none";
-
-  // Show the Hydra canvas
-  document.getElementById("my-canvas").style.display = "block";
-
-  // Start audio + visuals
-  startTone();
-});
 
 document.querySelectorAll('input[type="range"]').forEach(slider => {
   function updateBackground(el) {
