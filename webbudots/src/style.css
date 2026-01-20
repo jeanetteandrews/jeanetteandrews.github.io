@@ -19,8 +19,8 @@ html, body {
 #date-display {
   position: fixed;     
   bottom: 20px;
-  right: 20px;        
-  font-size: 30px;
+  right: 40px;        
+  font-size: 45px;
   color: white;
   font-family: "Honk", sans-serif;
   pointer-events: none;
@@ -38,39 +38,36 @@ html, body {
   z-index: 10;
 }
 
-#controls button {
+#controls .track-label {
   margin-bottom: 3px;
   font-family: "Honk", sans-serif;
   font-size: 50px;
+  color: black;
   background-color: rgb(254, 254, 254);
-  border: none;
+  padding: 0;
+  display: inline-block;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  text-align: center; 
+  width: 100%;
 }
 
 #controls input[type="range"] {
-  margin-bottom: 3px;
-  font-family: "Honk", sans-serif;
-  font-size: 50px;
+  margin-bottom: 10px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }  
-
-#controls button .button-text {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
 
 #about-button:hover {
   background-color: magenta;
 }
 
-#controls input[type="range"] {
-  margin-bottom: 10px;
-} 
-
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   width: 200px;
-  height: 10px; /* Reduced track height */
+  height: 10px;
   border-radius: 5px;
   background: linear-gradient(to right, #2196f3 50%, #ccc 50%);
   background-size: 100% 100%;
@@ -90,19 +87,19 @@ input[type="range"]::-webkit-slider-thumb {
   border: 2px solid #2196f3;
   border-radius: 50%;
   cursor: pointer;
-  margin-top: 0px; /* No margin needed now */
+  margin-top: 0px;
 }
 
 /* Firefox Track */
 input[type="range"]::-moz-range-track {
-  height: 10px; /* Reduced track height */
+  height: 10px;
   background: #ccc;
   border-radius: 5px;
 }
 
 /* Firefox Progress Fill */
 input[type="range"]::-moz-range-progress {
-  height: 10px; /* Reduced track height */
+  height: 10px;
   background: #2196f3;
   border-radius: 5px;
 }
@@ -116,7 +113,6 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   cursor: pointer;
 }
-
 
 #about-button {
   position: absolute;
@@ -133,6 +129,7 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 0px;
   border: none;
   background-color: rgb(254, 254, 254);
+  color: black;
 }
 
 #about-box {
@@ -262,4 +259,67 @@ a {
   color: magenta;
   font-family: "Honk", sans-serif;
   font-size: 50px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 1000px) {
+  #controls {
+    top: 1em;
+    right: 1em;
+    gap: .8em;
+  }
+
+  #controls .track-label {
+    font-size: 3em;
+    padding: .05em .2em .05em .2em;
+    box-sizing: border-box; 
+  }
+
+  input[type="range"] {
+    width: 100%; 
+    height: 4em; 
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 5em; 
+    height: 5em; 
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 5em; 
+    height: 5em; 
+  }
+
+  input[type="range"]::-moz-range-track {
+    height: 4em;
+  }
+
+  input[type="range"]::-moz-range-progress {
+    height: 4em; 
+  }
+
+  #about-button {
+    font-size: 3em; 
+    padding: .05em .2em .05em .2em; 
+    top: 1.5rem;
+    left: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  #date-display {
+    font-size: 3em; 
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  #about-box {
+    font-size: 1.5em; 
+    max-width: calc(100vw - 3em);
+    top: 4.5em; 
+    left: 1em;
+  }
+
+  #learn-more {
+    font-size: 2em; 
+  }
 }
