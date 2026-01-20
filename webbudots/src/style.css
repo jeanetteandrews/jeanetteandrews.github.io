@@ -20,7 +20,7 @@ html, body {
   position: fixed;     
   bottom: 20px;
   right: 40px;        
-  font-size: 45px;
+  font-size: 40px;
   color: white;
   font-family: "Honk", sans-serif;
   pointer-events: none;
@@ -41,7 +41,7 @@ html, body {
 #controls .track-label {
   margin-bottom: 3px;
   font-family: "Honk", sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   color: black;
   background-color: rgb(254, 254, 254);
   padding: 0;
@@ -119,7 +119,7 @@ input[type="range"]::-moz-range-thumb {
   top: 30px;
   left: 20px;
   padding: 6px 30px 6px 30px;
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Honk", sans-serif;
   cursor: pointer;
   display: flex;
