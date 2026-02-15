@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script>
+  <title>Python is my DAW</title>
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="src/script.js" defer></script>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- LEFT PANEL -->
+    <div class="left">
+
+      <!-- Large Title Text -->
+      <div class="main-content">
+
+        <div class="big-text">
+          This is what 74 Amapiano </br> drum patterns sound like:
+        </div>
+
+        <!-- Play / Randomize -->
+        <div class="controls">
+            <div class="control-btn" id="playButton" data-patch-id="amapiano" onclick="handlePlayClick('amapiano')">Play</div>
+            <div class="control-btn" onclick="randomizeGates('amapiano')">Randomize</div>
+        </div>
+
+        <!-- Gates -->
+        <div class="gates">
+
+        <div class="gate">
+            <label>Kick Gate:</label>
+            <input type="range" id="kickGate" min="0" max="0.55" value="0.0" step="0.01">
+        </div>
+
+        <div class="gate">
+            <label>Snare Gate:</label>
+            <input type="range" id="snareGate" min="0" max="0.34" value="0.08" step="0.01">
+        </div>
+
+        <div class="gate">
+            <label>Hi-hat Gate:</label>
+            <input type="range" id="hhGate" min="0" max="0.12" value="0.015" step="0.001">
+        </div>
+
+        <div class="gate">
+            <label>Log Drum Gate:</label>
+            <input type="range" id="bassGate" min="0" max="0.3" value="0.18" step="0.01">
+        </div>
+
+        <div class="gate">
+            <label>Percussion Gate:</label>
+            <input type="range" id="otherGate" min="0" max="0.35" value="0.11" step="0.01">
+        </div>
+
+        </div>
+
+        <!-- Audio Visualization Placeholder -->
+        <canvas id="visualizer"></canvas>
+
+      </div>
+
+      <!-- Bottom Navigation -->
+      <div class="nav">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="amapiano-data.html" class="nav-item">Where is this data from?</a>
+        <a href="about.html" class="nav-item">About</a>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="vertical-divider"></div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right">
+
+      <a href="amapiano.html" class="tab active">Amapiano</a>
+      <div class="horizontal-divider"></div>
+
+      <a href="budots.html" class="tab">Budots</a>
+      <div class="horizontal-divider"></div>
+
+      <a href="techno.html" class="tab">Detroit Techno</a>
+      <div class="horizontal-divider"></div>
+
+      <a href="boombap.html" class="tab">East Coast Boom Bap</a>
+      <div class="horizontal-divider"></div>
+
+      <div class="tab empty"></div>
+      <div class="horizontal-divider"></div>
+
+      <div class="tab empty"></div>
+      <div class="horizontal-divider"></div>
+
+      <div class="tab empty"></div>
+      <div class="horizontal-divider"></div>
+
+      <div class="tab empty"></div>
+      <div class="horizontal-divider"></div>
+
+      <div class="tab empty"></div>
+      <div class="horizontal-divider"></div>
+
+      <div class="tab empty"></div>
+
+    </div>
+
+  </div>
+</body>
+</html>
