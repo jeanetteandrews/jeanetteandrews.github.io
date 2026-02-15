@@ -9,9 +9,9 @@
             "modernui": 1
         },
         "classnamespace": "rnbo",
-        "rect": [ 278.0, 87.0, 529.0, 638.0 ],
+        "rect": [ 278.0, 87.0, 1060.0, 638.0 ],
         "default_fontname": "Lato",
-        "title": "/Users/jeanette/GitHub/jeanetteandrews.github.io/pythonismydaw/budots.rnbopat",
+        "title": "/Users/jeanette/GitHub/jeanetteandrews.github.io/pythonismydaw/amapiano.rnbopat",
         "boxes": [
             {
                 "box": {
@@ -38,7 +38,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 82,
+                    "rnbo_serial": 84,
                     "rnbo_uniqueid": "krt",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -457,7 +457,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 83,
+                    "rnbo_serial": 85,
                     "rnbo_uniqueid": "kat",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -876,7 +876,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 84,
+                    "rnbo_serial": 86,
                     "rnbo_uniqueid": "krdl",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -1296,7 +1296,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 85,
+                    "rnbo_serial": 87,
                     "rnbo_uniqueid": "klt",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -1715,7 +1715,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 86,
+                    "rnbo_serial": 88,
                     "rnbo_uniqueid": "kht",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -2325,7 +2325,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 87,
+                    "rnbo_serial": 89,
                     "rnbo_uniqueid": "kgain",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -3445,7 +3445,7 @@
                     "rnbo_extra_attributes": {
                         "hot": 0
                     },
-                    "rnbo_serial": 10,
+                    "rnbo_serial": 4,
                     "rnbo_uniqueid": "==_obj-8",
                     "text": "== 0"
                 }
@@ -3476,7 +3476,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 88,
+                    "rnbo_serial": 90,
                     "rnbo_uniqueid": "hrt",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -3896,7 +3896,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 89,
+                    "rnbo_serial": 91,
                     "rnbo_uniqueid": "hat",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -4316,7 +4316,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 90,
+                    "rnbo_serial": 92,
                     "rnbo_uniqueid": "hrdl",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -4736,7 +4736,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 91,
+                    "rnbo_serial": 93,
                     "rnbo_uniqueid": "hlt",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -5155,7 +5155,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 92,
+                    "rnbo_serial": 108,
                     "rnbo_uniqueid": "hht",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -5545,7 +5545,7 @@
                         "versionId": -1661410411,
                         "changesPatcherIO": 0
                     },
-                    "text": "param hht @max 0.16",
+                    "text": "param hht @max 0.18",
                     "varname": "hht"
                 }
             },
@@ -5765,7 +5765,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 93,
+                    "rnbo_serial": 95,
                     "rnbo_uniqueid": "hgain",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -6254,7 +6254,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 94,
+                    "rnbo_serial": 96,
                     "rnbo_uniqueid": "srt",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -6673,7 +6673,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 95,
+                    "rnbo_serial": 97,
                     "rnbo_uniqueid": "sat",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -7092,7 +7092,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 96,
+                    "rnbo_serial": 98,
                     "rnbo_uniqueid": "srdl",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -7512,7 +7512,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 97,
+                    "rnbo_serial": 99,
                     "rnbo_uniqueid": "slt",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -7913,7 +7913,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 483.0, 402.0, 115.0, 23.0 ],
+                    "patching_rect": [ 483.0, 402.0, 122.0, 23.0 ],
                     "rnbo_classname": "param",
                     "rnbo_extra_attributes": {
                         "unit": "",
@@ -7931,7 +7931,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 98,
+                    "rnbo_serial": 107,
                     "rnbo_uniqueid": "sht",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -8321,7 +8321,7 @@
                         "versionId": -1661410411,
                         "changesPatcherIO": 0
                     },
-                    "text": "param sht @max 0.4",
+                    "text": "param sht @max 0.42",
                     "varname": "sht"
                 }
             },
@@ -8541,7 +8541,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 99,
+                    "rnbo_serial": 101,
                     "rnbo_uniqueid": "sgain",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -10446,7 +10446,7 @@
                     "outlettype": [ "", "" ],
                     "patching_rect": [ 32.0, 231.08106565475464, 49.0, 23.0 ],
                     "rnbo_classname": "select",
-                    "rnbo_serial": 5,
+                    "rnbo_serial": 4,
                     "rnbo_uniqueid": "select_obj-13",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -10862,7 +10862,7 @@
                         "maximum": 1.0,
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 100,
+                    "rnbo_serial": 102,
                     "rnbo_uniqueid": "start",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,

@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "rnbo",
-        "rect": [ 164.0, 87.0, 700.0, 638.0 ],
+        "rect": [ 460.0, 87.0, 300.0, 638.0 ],
         "default_fontname": "Lato",
         "title": "/Users/jeanette/GitHub/jeanetteandrews.github.io/pythonismydaw/amapiano.rnbopat",
         "boxes": [
@@ -5115,7 +5115,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 60,
+                    "rnbo_serial": 30,
                     "rnbo_uniqueid": "bht",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -11954,7 +11954,7 @@
                         "enum": "",
                         "exponent": 1.0
                     },
-                    "rnbo_serial": 42,
+                    "rnbo_serial": 51,
                     "rnbo_uniqueid": "hht",
                     "rnboinfo": {
                         "needsInstanceInfo": 1,
@@ -12344,7 +12344,7 @@
                         "versionId": -1661410411,
                         "changesPatcherIO": 0
                     },
-                    "text": "param hht @max 0.12",
+                    "text": "param hht @max 0.14",
                     "varname": "hht"
                 }
             },
