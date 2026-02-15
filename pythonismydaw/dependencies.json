@@ -1,37 +1,5 @@
 [
   {
-    "id": "k2",
-    "file": "k150_techno.wav"
-  },
-  {
-    "id": "s2",
-    "file": "s150_techno.wav"
-  },
-  {
-    "id": "h2",
-    "file": "hh150_techno.wav"
-  },
-  {
-    "id": "k3",
-    "file": "k67_budots.wav"
-  },
-  {
-    "id": "s3",
-    "file": "s67_budots.wav"
-  },
-  {
-    "id": "h3",
-    "file": "hh67_budots.wav"
-  },
-  {
-    "id": "b3",
-    "file": "b67_budots.wav"
-  },
-  {
-    "id": "o3",
-    "file": "o67_budots.wav"
-  },
-  {
     "id": "k4",
     "file": "k74_amapiano.wav"
   },
@@ -49,18 +17,6 @@
   },
   {
     "id": "o4",
-    "file": "o74_amapiano.wav"
-  },
-  {
-    "id": "k5",
-    "file": "k53_boombap.wav"
-  },
-  {
-    "id": "s5",
-    "file": "s53_boombap.wav"
-  },
-  {
-    "id": "h5",
-    "file": "hh53_boombap.wav"
+    "file": "t74_amapiano.wav"
   }
 ]
