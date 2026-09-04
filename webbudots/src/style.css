@@ -189,15 +189,6 @@ input[type="range"]::-moz-range-thumb {
     "SHLN" 50;
 }
 
-.kalnia-glaze {
-  font-family: "Kalnia Glaze", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
 #about-box span{
   font-family: "Inconsolata", monospace;
   color: magenta;

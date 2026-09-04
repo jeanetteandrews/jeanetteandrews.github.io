@@ -363,7 +363,7 @@ function setGroupWet(groupIndex, value) {
   const indices = groupMap[groupIndex];
   
   // If slider is at 0, track is off
-  if (wetValue === 0) {
+  if (wetValue < 2) {
     effectEnabled[groupIndex] = false;
     indices.forEach(index => {
       volumes[index].mute = true;

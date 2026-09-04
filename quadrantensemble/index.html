@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="src/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../src/assets/favicons/webbudots.png"/>
+    <title>Quadrant Ensemble</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Quadrant Ensemble</h1>
+    <div class="date">Interactive sound installation, May 2026</div>
+    
+    <div class="slideshow-container">
+        <div class="slide active">
+            <video autoplay loop muted playsinline>
+                <source src="src/qe1.mov" type="video/mp4">
+            </video>
+        </div>
+        <div class="slide">
+            <video loop muted playsinline>
+                <source src="src/qe2.mov" type="video/mp4">
+            </video>
+        </div>
+        <div class="slide">
+            <video loop muted playsinline>
+                <source src="src/qe3.mov" type="video/mp4">
+            </video>
+        </div>
+        <div class="slide">
+            <video loop muted playsinline>
+                <source src="src/qe4.mov" type="video/mp4">
+            </video>
+        </div>
+        <div class="slide">
+            <video loop muted playsinline>
+                <source src="src/qe5.mov" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="arrows">
+            <button class="arrow" onclick="changeSlide(-1)">❮</button>
+            <button class="arrow" onclick="changeSlide(1)">❯</button>
+        </div>
+    </div>
+    
+    <div class="nav-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+        <span class="dot" onclick="goToSlide(4)"></span>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
