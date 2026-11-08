@@ -5,7 +5,7 @@ let reverb = new p5.Reverb();
 let delay = new p5.Delay();
 
 delay.delayTime(0.1);
-delay.filter(90); // low pass filter
+delay.filter(9000); // low pass filter
 reverb.set(3, 1.5);
 reverb.chain(delay);
 
@@ -77,7 +77,7 @@ function playSound(sound) {
     sound.pan(random(panValue), 0);
     sound.pan(random(panValue), timeFromNow1);
     sound.pan(random(panValue), timeFromNow1 + random(timeFromNow));
-    sound.rate(-.75);
+    sound.rate(.75);
     sound.disconnect();
     sound.connect(reverb);
     sound.play();
