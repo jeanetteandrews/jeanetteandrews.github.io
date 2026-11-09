@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "UFO Dog": "src/assets/favicons/ufo-dog.png",
     "Drum Randomizer 1": "src/assets/favicons/random-drums.svg",
     "Rima's Choir": "src/assets/favicons/rimas-choir.png",
-    "Cavity": "src/assets/favicons/cavity.png",
-    "Strudel": "https://www.pikpng.com/pngl/b/35-351375_free-ball-and-moon-emoji-blue-swirl-emoji.png"
+    "Cavity": "src/assets/favicons/cavity.png"
   };
 
   const projectDescriptions = {
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Cavity": "Using: p5.js. View <a href='https://thehtml.review/04/cavity/' target='_blank'>full site ↗</a>. Featured in <a href='https://thehtml.review/04/' target='_blank'>The HTML Review ↗</a>.",
     "UFO Dog": "Using: Three.js, Max RNBO. View <a href='https://jeanetteandre.ws/ufo-dog/'>full site ↗</a>.",
     "SFPC Musical Web": "Using: Woscope.js. View <a href='https://projects.sfpc.study/musical-web-summer24/' target='_blank'>full site ↗</a>. Showcase for the <a href='https://sfpc.study/' target='_blank'>School for Poetic Computation ↗</a> The Musical Web.",
-    "Sound Paint": "Using: p5.js, View <a href='https://jeanetteandre.ws/sound-paint/'>full site ↗</a>.",
+    "Sound Paint": "Using: p5.js, View <a href='https://sound-paint.onrender.com/'>full site ↗</a>.",
     "Python is my DAW": "Using: Python, Max RNBO. View <a href='https://jeanetteandre.ws/pythonismydaw/'>full site ↗</a>."
   };
 
@@ -56,37 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   links[0].click();
-
-  const keyboard = document.getElementById('keyboard');
-  const h3 = document.getElementById('animated-text');
-  const text = "is a creative coder and musical artist based in the Bay Area, CA.";
-  let index = 0;
-  let isTyping = true;
-
-  keyboard.addEventListener('click', () => {
-    if (isTyping) {
-      h3.textContent = ''; // Clear any existing text
-      index = 0;
-      typeText();
-    } else {
-      backspaceText();
-    }
-    isTyping = !isTyping;
-  });
-
-  function typeText() {
-    if (index < text.length) {
-      h3.innerHTML += text.charAt(index);
-      index++;
-      setTimeout(typeText, 20); // Adjust typing speed here
-    }
-  }
-
-  function backspaceText() {
-    if (index > 0) {
-      h3.textContent = h3.textContent.slice(0, -1);
-      index--;
-      setTimeout(backspaceText, 20); // Adjust backspacing speed here
-    }
-  }
 });
